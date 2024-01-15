@@ -2,14 +2,22 @@ import pandas as pd
 import mysql.connector
 from datetime import datetime
 
+# Global variables for database connection
+
+DB_HOST = 'localhost'
+DB_USER = 'root'
+DB_PASSWORD = ''
+OLTP_DB_NAME = 'oltp'
+OLAP_DB_NAME = 'olap'
+
 
 # Create Databases OLTP and OLAP
 
 # Establish the connection to the MySQL server
 cnx = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password=''
+    host = DB_HOST,
+    user = DB_USER,
+    password = DB_PASSWORD
 )
 
 # Create a cursor object to execute SQL queries
@@ -36,10 +44,10 @@ cnx.close()
 
 # Establish the connection to the MySQL database
 cnx = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    database='oltp',
-    password=''
+    host = DB_HOST,
+    user = DB_USER,
+    database = OLTP_DB_NAME,
+    password = DB_PASSWORD
 )
 
 # Create a cursor object to execute SQL queries
@@ -122,10 +130,10 @@ cnx.close()
 
 # Connect to the OLTP database
 cnx_oltp = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='',
-    database='oltp'
+    host = DB_HOST,
+    user = DB_USER,
+    password = DB_PASSWORD,
+    database = OLTP_DB_NAME
 )
 
 # Create a cursor object for the OLTP database
@@ -133,10 +141,10 @@ cursor_oltp = cnx_oltp.cursor()
 
 # Connect to the OLAP database
 cnx_olap = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='',
-    database='olap'
+    host = DB_HOST,
+    user = DB_USER,
+    password = DB_PASSWORD,
+    database = OLAP_DB_NAME
 )
 
 # Create a cursor object for the OLAP database
@@ -200,17 +208,17 @@ cnx_olap.close()
 
 # Establish connections to OLTP and OLAP databases
 oltp_cnx = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    database='oltp',
-    password=''
+    host = DB_HOST,
+    user = DB_USER,
+    database = OLTP_DB_NAME,
+    password = DB_PASSWORD
 )
 
 olap_cnx = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    database='olap',
-    password=''
+    host = DB_HOST,
+    user = DB_USER,
+    database = OLAP_DB_NAME,
+    password = DB_PASSWORD
 )
 
 # Create cursor objects for OLTP and OLAP connections
@@ -255,10 +263,10 @@ olap_cnx.close()
 
 # Establish the connection to the OLTP MySQL database
 oltp_cnx = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    database='oltp',
-    password=''
+    host = DB_HOST,
+    user = DB_USER,
+    database = OLTP_DB_NAME,
+    password = DB_PASSWORD
 )
 
 # Create a cursor object to execute OLTP SQL queries
@@ -266,10 +274,10 @@ oltp_cursor = oltp_cnx.cursor()
 
 # Establish the connection to the OLAP MySQL database
 olap_cnx = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    database='olap',
-    password=''
+    host = DB_HOST,
+    user = DB_USER,
+    database = OLAP_DB_NAME,
+    password = DB_PASSWORD
 )
 
 # Create a cursor object to execute OLAP SQL queries
@@ -317,10 +325,10 @@ olap_cnx.close()
 
 # Establish the connection to the OLTP MySQL database
 oltp_cnx = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    database='oltp',
-    password=''
+    host = DB_HOST,
+    user = DB_USER,
+    database = OLTP_DB_NAME,
+    password = DB_PASSWORD
 )
 
 # Create a cursor object to execute OLTP SQL queries
@@ -328,10 +336,10 @@ oltp_cursor = oltp_cnx.cursor()
 
 # Establish the connection to the OLAP MySQL database
 olap_cnx = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    database='olap',
-    password=''
+    host = DB_HOST,
+    user = DB_USER,
+    database = OLAP_DB_NAME,
+    password = DB_PASSWORD
 )
 
 # Create a cursor object to execute OLAP SQL queries
